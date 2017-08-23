@@ -87,6 +87,12 @@ import angular from 'angular';
             template: require('./Form.html'),
         }
     });
+    app.directive('app', function(){
+        return{
+            restrict: 'E',
+            template: require('./Assembly.html'),
+        }
+    });
 
 })();
 /**
