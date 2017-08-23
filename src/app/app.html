@@ -378,45 +378,9 @@
             <th>your contact information</th>
         </tr>
         </thead>
-        <tr>
-            <td>first_name</td>
-            <td>{{user.firstName}}</td>
-        </tr>
-        <tr>
-            <td>last_name</td>
-            <td>{{user.lastName}}</td>
-        </tr>
-        <tr>
-            <td>email</td>
-            <td>{{user.email}}</td>
-        </tr>
-        <tr>
-            <td>phone</td>
-            <td>{{user.phone}}</td>
-        </tr>
-        <tr>
-            <td>address</td>
-            <td>{{user.address}}</td>
-        </tr>
-        <tr>
-            <td>city</td>
-            <td>{{user.city}}</td>
-        </tr>
-        <tr>
-            <td>state</td>
-            <td>{{user.state}}</td>
-        </tr>
-        <tr>
-            <td>zip</td>
-            <td>{{user.zip}}</td>
-        </tr>
-        <tr>
-            <td>website</td>
-            <td>{{user.website}}</td>
-        </tr>
-        <tr>
-            <td>comment</td>
-            <td>{{user.description}}</td>
+        <tr ng-repeat="(key,value) in user">
+            <td>{{key}}</td>
+            <td>{{value}}</td>
         </tr>
     </table>
 </div>
