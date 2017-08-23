@@ -1,0 +1,84 @@
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+$fa-font-path: "~sass-font-awesome/fonts/";
+
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/";
+@import "~angular-material/angular-material.scss";
+@import "~sass-font-awesome/font-awesome";
+
+/* Sticky footer styles
+-------------------------------------------------- */
+
+body, html {
+  min-height: 100%;
+  background-color: #e6e6e6;
+}
+
+.main-container {
+  min-height: 100%;
+  min-width: 480px;
+  // background-image: url('../../assets/img/loginPage/loginPage.jpg');
+  height: auto;
+}
+
+.login-form__background-img {
+    width: 100%;
+    min-height: 100%;
+    position:relative;
+    // background-image: url('../../assets/img/loginPage/loginPage.jpg');
+    background-image: url('../img/loginPage/loginPage3.jpg');
+    // transition: 3s linear;
+    background-size: cover; /* Современные браузеры */
+}
+
+.col-sm-9{
+  margin-top:15px;
+}
+
+.table-bordered{
+  border:1px solid #93B294;
+
+}
+
+.table-bordered tbody tr td{
+  border:1px solid #93B294;
+}
+
+.table-bordered thead tr th{
+  border:1px solid #93B294;
+  color: #679056;
+  background-color:#DFF0D8;
+}
+
+.ng-touched.ng-invalid{
+  border:1px solid #A84241;
+}
+
+.ng-valid{
+  border:1px solid green;
+}
+
+.success{
+  color:green;
+  background-color:rgba(0,255,0,0.3);
+  border:1px solid green;
+
+
+}
+
+.error{
+  color:red;
+  background-color:rgba(255,0,0,0.1);
+  border:1px solid #A84241;
+}
+
+.glyphicon-ok{
+  color:green;
+}
+.glyphicon-remove,.glyphicon-send{
+  color:#A84241;
+}
+
+.text-error{
+  @extend .glyphicon-remove;
+  font-weight:bold;
+}
