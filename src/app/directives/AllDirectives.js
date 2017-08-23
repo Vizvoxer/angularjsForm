@@ -81,6 +81,12 @@ import angular from 'angular';
             template: require('./Table.html'),
         }
     });
+    app.directive('userForm', function(){
+        return{
+            restrict: 'E',
+            template: require('./Form.html'),
+        }
+    });
 
 })();
 /**
