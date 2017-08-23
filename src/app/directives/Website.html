@@ -1,0 +1,24 @@
+<label for="website" class="col-sm-3 control-label">Website or domain name</label>
+<div class="col-sm-9">
+    <div class="input-group">
+            <span class="input-group-addon" ng-class="{error: form.website.$touched && form.website.$invalid,
+                                                        success:form.website.$valid}">
+                            <span class="glyphicon glyphicon-globe"></span>
+            </span>
+        <input type="text"
+               class="form-control"
+               id="website"
+               placeholder="Website or domain name"
+               ng-model="user.website"
+               name="website"
+               ng-pattern="urlPattern"
+               required>
+        <span class="glyphicon  form-control-feedback"
+              ng-show="form.website.$touched"
+              ng-class="{'glyphicon-ok':form.phone.$valid,
+                                      'glyphicon-remove':form.website.$touched && form.website.$invalid}"
+        ></span>
+    </div>
+    <span ng-show="form.website.$touched && form.website.$error.required">Please, fill out this input</span>
+    <span ng-show="form.website.$dirty && form.website.$invalid">Wrong value!</span>
+</div>

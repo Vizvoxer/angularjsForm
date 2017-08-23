@@ -1,0 +1,12 @@
+<table class="table table-bordered" ng-show="form.$submitted">
+    <thead>
+    <tr>
+        <th>contact info</th>
+        <th>your contact information</th>
+    </tr>
+    </thead>
+    <tr ng-repeat="(key,value) in user">
+        <td>{{key}}</td>
+        <td>{{value}}</td>
+    </tr>
+</table>

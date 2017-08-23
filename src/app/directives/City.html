@@ -1,0 +1,26 @@
+<label for="city" class="col-sm-3 control-label">City</label>
+<div class="col-sm-9">
+    <div class="input-group">
+            <span class="input-group-addon" ng-class="{error: form.city.$touched && form.city.$invalid,
+                                                        success:form.city.$valid}">
+                            <span class="glyphicon glyphicon-home"></span>
+            </span>
+        <input type="text"
+               class="form-control"
+               id="city"
+               placeholder="City"
+               ng-model="user.city"
+               ng-minlength="3"
+               ng-maxlength="15"
+               ng-pattern="literalPattern"
+               name="city"
+               required>
+        <span class="glyphicon  form-control-feedback"
+              ng-show="form.city.$touched"
+              ng-class="{'glyphicon-ok':form.city.$valid,
+                                      'glyphicon-remove':form.city.$touched && form.city.$invalid}"
+        ></span>
+    </div>
+    <span ng-show="form.city.$touched && form.city.$error.required">Please, fill out this input</span>
+    <span ng-show="form.city.$dirty && form.city.$invalid">Wrong value!</span>
+</div>

@@ -1,10 +1,10 @@
 import './assets/styles/main.scss';
 import './assets/styles/select.css';
-
+import './directives/AllDirectives'
 import angular from 'angular';
 
 (function() {
-    var app = angular.module('form', []);
+    var app = angular.module('form', ['directs']);
 
     app.controller('FormСontroller', ['$scope', function($scope) {
        $scope.user = {
@@ -33,5 +33,6 @@ import angular from 'angular';
            $scope.isTableVisible = !$scope.isTableVisible;
        }
     }]);
+
 
 })();

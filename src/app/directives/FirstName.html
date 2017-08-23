@@ -1,0 +1,27 @@
+<label for="name" class="col-sm-3 control-label">First name</label>
+<div class="col-sm-9">
+    <div class="input-group">
+            <span class="input-group-addon" ng-class="{error: form.firstName.$touched && form.firstName.$invalid,
+                                                        success:form.firstName.$valid }">
+                            <span class="glyphicon glyphicon-user"></span>
+            </span>
+        <input type="text"
+               class="form-control"
+               id="name"
+               placeholder="First name"
+               ng-model="user.firstName"
+               name="firstName"
+               ng-minlength="3"
+               ng-maxlength="15"
+               ng-pattern="literalPattern"
+               required>
+        <span class="glyphicon  form-control-feedback"
+              ng-show="form.firstName.$touched"
+              ng-class="{'glyphicon-ok':form.firstName.$valid,
+                                      'glyphicon-remove':form.firstName.$touched && form.firstName.$invalid}"
+        ></span>
+    </div>
+    <span ng-show="form.firstName.$touched && form.firstName.$error.required">Please, fill out this input</span>
+    <span ng-show="form.firstName.$dirty && form.firstName.$invalid">Wrong value!</span>
+
+</div>

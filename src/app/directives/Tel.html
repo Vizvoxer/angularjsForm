@@ -1,0 +1,24 @@
+<label for="tel" class="col-sm-3 control-label">Phone #</label>
+<div class="col-sm-9">
+    <div class="input-group">
+            <span class="input-group-addon" ng-class="{error: form.phone.$touched && form.phone.$invalid,
+                                                        success:form.phone.$valid}">
+                            <span class="glyphicon glyphicon-earphone"></span>
+            </span>
+        <input type="tel"
+               class="form-control"
+               id="tel"
+               placeholder="(845)555-1212"
+               ng-model="user.phone"
+               name="phone"
+               ng-pattern="phonePattern"
+               required>
+        <span class="glyphicon  form-control-feedback"
+              ng-show="form.phone.$touched"
+              ng-class="{'glyphicon-ok':form.phone.$valid,
+                                      'glyphicon-remove':form.phone.$touched && form.phone.$invalid}"
+        ></span>
+    </div>
+    <span ng-show="form.phone.$touched && form.phone.$error.required">Please, fill out this input</span>
+    <span ng-show="form.phone.$dirty && form.phone.$invalid">Wrong value!</span>
+</div>

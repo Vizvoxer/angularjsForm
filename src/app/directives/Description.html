@@ -1,0 +1,25 @@
+<label for="description" class="col-sm-3 control-label">Project Description</label>
+<div class="col-sm-9">
+    <div class="input-group">
+            <span class="input-group-addon" ng-class="{error: form.description.$touched && form.description.$invalid,
+                                                        success:form.description.$valid}">
+                            <span class="glyphicon glyphicon-pencil"></span>
+            </span>
+        <textarea class="form-control"
+                  id="description"
+                  placeholder="Project Description"
+                  ng-model="user.description"
+                  name="description"
+                  ng-minlength="10"
+                  ng-maxlength="200"
+                  ng-pattern="literalPattern"
+                  required> </textarea>
+        <span class="glyphicon  form-control-feedback"
+              ng-show="form.description.$touched"
+              ng-class="{'glyphicon-ok':form.description.$valid,
+                                      'glyphicon-remove':form.description.$touched && form.description.$invalid}"
+        ></span>
+    </div>
+    <span ng-show="form.description.$touched && form.description.$error.required">Please, fill out this input</span>
+    <span ng-show="form.description.$dirty && form.description.$invalid">Please, enter at least 10 characters and no more 200 characters</span>
+</div>

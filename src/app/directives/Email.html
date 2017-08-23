@@ -1,0 +1,25 @@
+<label for="email" class="col-sm-3 control-label">E-Mail</label>
+<div class="col-sm-9">
+    <div class="input-group">
+            <span class="input-group-addon" ng-class="{error: form.email.$touched && form.email.$invalid,
+                                                        success:form.email.$valid }">
+                            <span class="glyphicon glyphicon-envelope"></span>
+            </span>
+        <input type="email"
+               class="form-control"
+               id="email"
+               placeholder="E-Mail Address"
+               ng-model="user.email"
+               name="email"
+               required>
+        <span class="glyphicon  form-control-feedback"
+              ng-show="form.email.$touched"
+              ng-class="{'glyphicon-ok':form.email.$valid,
+                                      'glyphicon-remove':form.email.$touched && form.email.$invalid}"
+        ></span>
+    </div>
+    <span ng-show="form.email.$touched && form.email.$error.required">Please, fill out this input</span>
+    <span ng-show="form.email.$dirty && form.email.$invalid">Wrong value!</span>
+
+
+</div>

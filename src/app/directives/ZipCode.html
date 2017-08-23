@@ -1,0 +1,26 @@
+<label for="zip" class="col-sm-3 control-label">Zip Code</label>
+<div class="col-sm-9">
+    <div class="input-group">
+            <span class="input-group-addon" ng-class="{error: form.zip.$touched && form.zip.$invalid,
+                                                        success:form.zip.$valid}">
+                            <span class="glyphicon glyphicon-home"></span>
+            </span>
+        <input type="number"
+               class="form-control"
+               id="zip"
+               placeholder="Zip Code"
+               ng-model="user.zip"
+               name="zip"
+               ng-minlength="4"
+               ng-maxlength="6"
+               ng-pattern="numericalPattern"
+               required>
+        <span class="glyphicon  form-control-feedback"
+              ng-show="form.zip.$touched"
+              ng-class="{'glyphicon-ok':form.zip.$valid,
+                                      'glyphicon-remove':form.zip.$touched && form.zip.$invalid}"
+        ></span>
+    </div>
+    <span ng-show="form.zip.$touched && form.zip.$error.required">Please, fill out this input</span>
+    <span ng-show="form.zip.$dirty && form.zip.$invalid">Wrong value!</span>
+</div>

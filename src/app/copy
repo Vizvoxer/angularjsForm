@@ -1,0 +1,904 @@
+//////////////////////////////////////////
+ChartComponentRowPromotion
+
+<li data-product-id="{product_id}" class="chart_row promotion-row partner_wrapper even nilink" data-filter-option-ids="" ni-stop-propogation='true'>
+    <div colspan="{colspan}"  class="promotion">
+        <a href="{link::{product_id}::{link_type}}&place=mid_banner" data-product-id="{product_id}" target="_blank" class="nilink">&nbsp;</a>
+    </div>
+</li>
+//////////////////////////////
+ChartComponentRow
+
+{promotion}
+<li data-product-id="{product_id}" class="chart_row partner_wrapper {oddeven} nilink" data-filter-option-ids="{filter_option_ids}"
+    href="{link::{clickable_row_linktype}}" style="cursor:pointer;"
+    data-product-name="{product_name}">
+    <div class="inner-row">
+        {product_cells_html_assy}
+    </div>
+</li>
+{promotion_below}
+//////////////////////
+ChartComponentFilter
+
+<div class="filter-dropdown-wrapper">
+  <select class="dropdownFilter">
+      {options}
+  </select>
+</div>
+//////////////////////
+settings
+
+default_css_attributes:
+  cmp-border: 'solid 1px #ccc'
+  cmp-tbl-row-odd: 'rgba(39, 42, 42, 0.85)'
+  cmp-tbl-row-even: 'rgba(39, 42, 42, 0.85)'
+  cmp-tbl-row-border: '#e1e1e1'
+  cmp-tbl-row-border-width: '0px'
+  cmp-tbl-hrd-bg: 'inherit'
+  cmp-tbl-hrd-clr: 'inherit'
+  cmp-tbl-row-hover-border-width: '0'
+  cmp-tbl-row-hover-border-color: 'inherit'
+  cmp-tbl-row-hover-background-color: 'inherit'
+  ribbon-top: '0px'
+  ribbon-right: '0px'
+  ribbon-left: '0px'
+  ribbon-bottom: '0px'
+  ribbon-width: '135px'
+  ribbon-height: '40px'
+  ribbon-image: '0'
+  img-margin-top: '0px'
+  product-bg-color: '#000000'
+  edtr-scr-clr: 'inherit'
+  edtr-scr-fnt-fm: 'Arial'
+  edtr-scr-fnt-sz: '40px'
+  promotion-image: '0'
+  promotion-hover-image: '0'
+  promotion-image-height: '0'
+  promotion-hover-image-height: '0'
+  up-arrow: url()
+  down-arrow: url()
+  filter-width: '145px'
+  filter-height: '32px'
+  filter-label-color: '#ffffff'
+  filter-label-size: '19px'
+  filter-background-color: 'rgba(28, 54, 65, 0.9)'
+  filter-text-color: '#939697'
+  filter-font-family: 'sans-serif'
+  filter-dropdown-bg-color: 'white'
+  filter-padding-top: '6px'
+  filter-padding-bottom: '7px'
+  botcol1: '0px'
+  link-color: '#6f58b2'
+  link-color-hover: '#6f58b2'
+  row-padding-right-left: '15px'
+  howWeScore_inline: "no"
+  hws_discl_margin-top: "25px"
+  link-hws-font-size: "13px"
+  adv-underline: "underline"
+  margin-top-label: "inherit"
+  margin-left-label: "inherit"
+  review-text-align: "right"
+  color-labal-text: "#8c8c8c"
+  size-labael-text: '14px'
+  font-label-text: "Roboto"
+
+css_form:
+  - type: 'group'
+    label: 'Heading'
+    children:
+      - key: 'adv-underline'
+        label: 'adv-underline'
+        type: 'select'
+        options: ["underline","none"]
+      - key: 'cmp-tbl-hrd-bg'
+        label: 'Heading Background color'
+        type: 'color'
+      - key: 'cmp-tbl-hrd-clr'
+        label: 'Heading Text color'
+        type: 'color'
+      - key: 'howWeScore_inline'
+        label: 'How We Score Inline'
+        type: 'select'
+        options: ["yes","no"]
+      - key: 'hws_discl_margin-top'
+        label: 'HWScore&Disclosure margin Top'
+        type: 'dimension'
+      - key: 'link-hws-font-size'
+        label: 'HWScore&Disclosure Font-Size'
+        type: 'dimension'
+
+  - type: 'group'
+    label: 'Chart'
+    children:
+      - key: 'cmp-tbl-row-even'
+        label: 'Even Row Background Color'
+        type: 'color'
+      - key: 'cmp-tbl-row-odd'
+        label: 'Odd Rows Background Color'
+        type: 'color'
+      - key: 'cmp-tbl-row-border'
+        label: 'Rows Bottom Border Color'
+        type: 'color'
+      - key: 'cmp-tbl-row-border-width'
+        label: 'Rows Bottom border width'
+        type: 'dimension'
+      - key: 'cmp-tbl-row-hover-border-width'
+        label: 'Rows hover border width'
+        type: 'dimension'
+      - key: 'cmp-tbl-row-hover-border-color'
+        label: 'Rows hover border color'
+        type: 'color'
+      - key: 'cmp-tbl-row-hover-background-color'
+        label: 'Rows hover background color'
+        type: 'color'
+      - key: 'product-bg-color'
+        label: 'Product image background color'
+        type: 'color'
+      - key: 'row-padding-right-left'
+        label: 'Rows Padding sides'
+        type: 'dimension'
+      - key: 'color-labal-text'
+        label: 'color-labal-text'
+        type: 'color'
+      - key: 'size-labael-text'
+        label: 'size-labael-text'
+        type: 'dimension'
+      - key: 'font-label-text'
+        label: 'font-label-text'
+        type: 'font-family'
+
+  - type: 'group'
+  - type: 'group'
+    label: 'Ribbon'
+    children:
+      - key: 'ribbon-top'
+        label: 'Top Position'
+        type: 'dimension'
+      - key: 'ribbon-right'
+        label: 'Right Position'
+        type: 'dimension'
+      - key: 'ribbon-left'
+        label: 'Left Position'
+        type: 'dimension'
+      - key: 'ribbon-bottom'
+        label: 'Bottom Position'
+        type: 'dimension'
+      - key: 'ribbon-width'
+        label: 'Width'
+        type: 'dimension'
+      - key: 'ribbon-height'
+        label: 'Height'
+        type: 'dimension'
+  - type: 'group'
+    label: 'Margins'
+    children:
+      - key: 'img-margin-top'
+        label: 'Image Top Margin'
+        type: 'dimension'
+
+  - type: 'group'
+    label: 'Editor Score'
+    children:
+      - key: 'edtr-scr-clr'
+        label: 'Font color'
+        type: 'color'
+      - key: 'edtr-scr-fnt-fm'
+        label: 'Font family'
+        type: 'fontFamily'
+      - key: 'edtr-scr-fnt-sz'
+        label: 'Font Size'
+        type: 'fontSize'
+
+  - type: 'group'
+    label: 'Filters'
+    children:
+      - key: 'filter-width'
+        label: 'Width'
+        type: 'dimension'
+      - key: 'filter-height'
+        label: 'Height'
+        type: 'dimension'
+      - key: 'filter-label-color'
+        label: 'Label color'
+        type: 'color'
+      - key: 'filter-label-size'
+        label: 'Label font size'
+        type: 'fontSize'
+      - key: 'filter-background-color'
+        label: 'Filter background color'
+        type: 'color'
+      - key: 'filter-text-color'
+        label: 'Filter text color'
+        type: 'color'
+      - key: 'filter-dropdown-bg-color'
+        label: 'Dropdown bg color'
+        type: 'color'
+      - key: 'filter-font-family'
+        label: 'Filter font family'
+        type: 'fontFamily'
+      - key: 'filter-padding-top'
+        label: 'Padding top'
+        type: 'dimension'
+      - key: 'filter-padding-bottom'
+        label: 'Padding bottom'
+        type: 'dimension'
+      - key: 'margin-top-label'
+        label: 'margin-top-label'
+        type: 'dimension'
+      - key: 'margin-left-label'
+        label: 'margin-left-label'
+        type: 'dimension'
+
+  - type: 'group'
+    label: 'Text'
+    children:
+      - key: 'botcol1'
+        label: 'Margin top - text'
+        type: 'dimension'
+
+  - type: 'group'
+    label: 'Button'
+    children:
+      - key: 'link-color'
+        label: 'button color'
+        type: 'color'
+
+      - key: 'link-color-hover'
+        label: 'button color hover'
+        type: 'color'
+//////////////////////////////////
+ChartComponentReadReviewTextLink
+
+<div class="product-link"><a class="link-type-review" href="{url}">
+        <div class="label-text">{link_title}</div>
+    </a></div>
+///////////////////////////////////////
+ChartComponentExpandCollapseAnchor
+
+<a id="collapser" class="chart-collapse" data-showmore="{expand_link_collapse_text}"
+   data-showless="{expand_link_expand_text}" data-state="expanded" data-products="{collapsed_num_of_products}">
+    {expand_link_expand_text}
+</a>
+/////////////////////////////////////
+ChartComponentFiltersWrapperWithClearBtn
+
+<div class="filters-select">
+    {filters_label}
+    {filters}
+   clear
+</div>
+<script>
+  u.execWhenReadyPoller(function(){
+      $('.clear-filters').click(function(){
+          $('.dropdownFilter').prop('selectedIndex', 0).trigger('change');
+      });
+  },  u.poller('jquery'));
+</script>
+/////////////////////////////////////
+ChartComponentTooltip
+
+<img class="tooltip-icon" data-tooltip-text="{tooltip}" data-tooltip-classes="qtip-chart qtip-col-head"
+     src="{tooltip_image_url}"/>
+/////////////////////////////////////////////
+style
+
+$white: #fff;
+$dark-grey-blue: #314963;
+$greyish-brown: #3d3d3d;
+$black: #000;
+$pale-grey: #e2ecf2;
+$medium-blue: #3452c6;
+$golden: #f7c300;
+$steel-grey: #6f888b;
+$col0s: 255px;
+$col1s: 130px;
+$col2s: 270px;
+$col3s: 145px;
+$col4s: 225px;
+$accordionContentSize: ($col0s + $col1s + $col2s - 4px);
+$accordionImageSize: ($col3s + $col4s - 10px);
+#{$element-selector}.product-list-component.chart-component {
+
+    .chart-table {
+        margin: auto;
+
+        ul {
+            list-style-type: none !important;
+            li.chart_row {
+                width: 1035px;
+                height: 160px;
+                margin-left: -30px;
+                padding-left: 10px;
+                overflow: hidden;
+                .col-5 {
+                    width: 100%;
+                    height: 20px;
+                    box-shadow: inset 0px 2px 5px 0px #7b7b7b;
+                    opacity: 0;
+                    transition: .5s all ease;
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    text-align: center;
+                    background-color: #9b9b9b;
+                    @media all and (max-width: 1024px) {
+                        opacity: 1;
+                        padding: 1px 0;
+                        box-shadow: inset 0px 0px 0px 0px transparent;
+                    }
+                    cursor: pointer;
+                    .inner-cell-content {
+                        display: inline-block;
+                    }
+                    &.show-button {
+                        opacity: 1;
+                        box-shadow: inset 0px 0px 0px 0px transparent;
+                    }
+                    > div {
+                        font-size: 14px;
+                        font-weight: 500;
+                        font-style: normal;
+                        & .label-text:before {
+                            content: url('//d15o9qq6jqrrp9.cloudfront.net/assets/general/7119/arr-down.png');
+                            margin-right: 5px;
+                        }
+                        & .label-text.up:before {
+                            content: url('//d15o9qq6jqrrp9.cloudfront.net/assets/general/7120/arr-up.png');
+                            margin-right: 5px;
+                        }
+                        & .label-text {
+                            color: $white;
+                        }
+                    }
+                }
+                &:hover {
+                    .col-5 {
+                        opacity: 1;
+                        -webkit-transition-delay: .6s;
+                        transition-delay: .6s;
+                    }
+                }
+                .bb-ribbon {
+                    padding: 0 1em;
+                    margin: 0;
+                    line-height: 2em;
+                    position: absolute;
+                    color: #fff;
+                    font-size: 14px;
+                    text-align: center;
+                    box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+                    text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
+                    background: transparent;
+                    display: inline-block;
+                    box-sizing: content-box;
+                    white-space: nowrap;
+                    z-index: 100;
+                    &:after {
+                        content: "";
+                        width: 0;
+                        bottom: 0;
+                        position: absolute;
+                        display: block;
+                        border-color: inherit;
+                        border-width: 1em;
+                        border-style: solid;
+                        box-shadow: 0 1px 0 rgba(0,0,0,0.3);
+                        z-index: 100;
+                        right: -1em;
+                        border-left-width: 0;
+                        border-right-color: transparent;
+                    }
+                    .bb-ribbon-corner {
+                        bottom: -.5em;
+                        position: absolute;
+                        display: block;
+                        border-style: solid;
+                        border-color: #397e30 transparent transparent transparent;
+                        z-index: 100;
+                        left: 0;
+                        border-width: .5em 0 0 .5em;
+                    }
+                }
+                .free-image {
+                    background: $product-bg-color;
+                    height: auto;
+                    margin: 20px auto;
+                    width: 210px;
+                    img {
+                        width: 210px;
+                        height: 85px;
+                    }
+                }
+                .partner-score {
+                    margin-right: auto;
+                    .override {
+                        font-family: Roboto;
+                        color: #64b5f6 !important;
+                        font-size: 64px !important;
+                        font-weight: 300 !important;
+                        letter-spacing: 0px !important;
+                        position: relative !important;
+                        top: -2px !important;
+                    }
+                }
+                .inner-row {
+                    background: #fff;
+                    position: relative;
+                    height: 100%;
+                    float: left;
+
+
+
+                    @for $i from 0 through 4 {
+                        .col-#{$i} {
+                            float: left;
+                            text-align: center;
+                            border-left: 1px solid #eff8ff;
+                            border-right: 1px solid #eff8ff;
+                            border-bottom: 1px solid #ddeffd;
+                            @if $i == 0 {
+                                .rankit-disabled-earlier {
+                                    padding-bottom: 0px !important;
+                                }
+                                .user-ratings-wrapper .rankit {
+                                    padding-bottom: 0px !important;
+
+                                }
+                            }
+                            @if $i == 2 {
+                                background-color: #eff7fe;
+                                border-left: 1px solid #e0f0fe;
+                                border-right: 1px solid #e0f0fe;
+                                font-family: Roboto;
+                                color: #0d47a1;
+                                font-size: 20px;
+                                font-weight: 300;
+                                letter-spacing: -0.05px;
+                                padding: 10px 15px;
+                            }
+                            @if $i == 3 {
+                                position: relative;
+                                .product-link {
+                                    position: absolute;
+                                    width: 100%;
+                                    height: 18px;
+                                    line-height: 18px;
+                                    bottom: 18px;
+                                    text-align: center;
+                                    .link-type-review {
+                                        font-family: Roboto;
+                                        color: #0d47a1;
+                                        font-size: 14px;
+                                        font-weight: 400;
+                                        letter-spacing: -0.03px;
+                                        text-decoration: underline;
+                                        bottom: 0px;
+                                    }
+                                }
+                            }
+                            @if $i == 4 {
+                                .product-link .link-type-btn {
+                                    width: 168px !important;
+                                    height: 53px !important;
+                                    margin: auto !important;
+                                    line-height: 53px !important;
+                                }
+                            }
+                            .inner-cell {
+                                display: table;
+                                width: 100%;
+                                height: 100%;
+                                .inner-cell-content {
+                                    display: table-cell;
+                                    vertical-align: middle;
+                                }
+                            }
+                            @if $i == 0 {
+                                width: $col0s !important;
+                            }
+                            @else if $i == 1 {
+                                width: $col1s !important;
+                            }
+                            @else if $i == 2 {
+                                width: $col2s !important;
+                            }
+                            @else if $i == 3 {
+                                width: $col3s !important;
+                            }
+                            @else if $i == 4 {
+                                width: $col4s !important;
+                            }
+                            height: 160px !important;
+                        }
+                    }
+                    .col-6 {
+                        width: 100%;
+                        height: 270px;
+                        /*border-left: 1px solid #90caf9;
+                        border-right: 1px solid #90caf9;*/
+                        position: relative;
+                        overflow: hidden;
+                        float: left;
+                        .inner-cell {
+                            position: relative;
+                            height: 260px;
+                            opacity: 0;
+                            top: -30px;
+                            display: none;
+                            padding-top: 35px;
+                            .label-text, .free-text, .list {
+                                width: $accordionContentSize;
+                                float: left;
+                            }
+                            .free-text, .list {
+                                padding-left: 20px;
+                            }
+                            .label-text {
+                                margin-bottom: 15px;
+                            }
+                            .free-text {
+                                margin-bottom: 10px;
+                                color: #212121;
+                                font-family: Roboto;
+                                font-size: 16px;
+                                font-weight: 500;
+                                letter-spacing: -0.05px;
+                                line-height: 24px;
+                            }
+                            .free-image {
+                                width: $accordionImageSize;
+                                margin-right: 10px;
+                                height: 180px;
+                                float: right;
+                                overflow: hidden;
+                                img {
+                                    width: 100%;
+                                    height: auto;
+                                }
+                            }
+
+
+                            .highlights {
+                                background: -moz-linear-gradient(left, rgba(222,239,253,1) 0%, rgba(222,239,253,0) 100%);
+                                background: -webkit-linear-gradient(left, rgba(222,239,253,1) 0%,rgba(222,239,253,0) 100%);
+                                background: linear-gradient(to right, rgba(222,239,253,1) 0%,rgba(222,239,253,0) 100%);
+                                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#deeffd', endColorstr='#00deeffd',GradientType=1 );
+                                background-position: 0px 32px;
+                                background-repeat: no-repeat;
+                                color: #64b5f6;
+                                font-family: Roboto;
+                                font-size: 20px;
+                                font-weight: 500;
+                                letter-spacing: -0.07px;
+                                line-height: 20px;
+                                padding-bottom: 14px;
+                                text-indent: 20px;
+                            }
+
+                            ul {
+                                padding-left: 0px;
+                                padding-top: 0px;
+                                li {
+                                    padding: 0px;
+                                    margin: 4px 0px;
+                                    font-size: 16px !important;
+                                    color: #090909;
+                                    font-family: Roboto;
+                                    font-weight: 300;
+                                    letter-spacing: -0.05px;
+                                }
+                                li:before {
+                                    content: "•";
+                                    float: left;
+                                    color: #64b5f6;
+                                    margin-right: 11px;
+                                }
+                            }
+
+                            .product-link {
+                                position: absolute;
+                                bottom: 0px;
+                                left: 10px;
+                                .label-text {
+                                    text-align: left;
+                                    margin-bottom: 0px;
+                                    color: #64b5f6 !important;
+                                    font-family: Roboto;
+                                    font-size: 16px !important;
+                                    font-weight: 400;
+                                    letter-spacing: -0.04px;
+                                }
+                            }
+                            .product-link.v1 {
+                                position: absolute;
+                                bottom: 0px;
+                                right: 10px;
+                                left: auto;
+                                > div {
+                                    position: relative;
+                                    bottom: auto;
+                                    left: auto;
+                                    right: 0px;
+                                }
+                                a {
+                                    bottom: 3px !important;
+                                    color: #0d47a1 !important;
+                                    font-family: Roboto;
+                                    font-size: 16px !important;
+                                    font-weight: 700;
+                                    letter-spacing: -0.04px;
+                                    text-decoration: none !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    select::-ms-expand {
+        background: transparent;
+    }
+}
+// Need to apply custom settings on top of standart, so much specifity
+.layout-container.chart-main-container .product-list-component.chart-component .chart_row:first-child {
+    background-color: transparent !important;
+}
+/////////////////////////////////////////////////////////////////////
+ChartComponentTextLabel
+
+<div class="label-text">{title}</div>
+//////////////////////////////////////////////////
+ChartComponentCustomerRating
+
+<div class="user-ratings-wrapper" poc="user-ratings">
+    <div class="rankit" data-partner="{product_id}" data-row="{index}" data-votes="{votes}" data-variant="{variant}" data-score="{rating}"></div>
+    <div class="hint" id="component_{component_id}_hint{index}"></div>
+</div>
+/////////////////////////////////////////////////////////
+ChartComponentFilterOption
+
+<option value="{value}">{text}</option>
+/////////////////////////////////////////////////////////
+ChartComponent
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&amp;subset=cyrillic-ext" rel="stylesheet">
+<div class="filters_wrapper"> {filters_html_assy} <div class="hws_discl" >{disclosure_html_assy}</div></div>
+<div class="row site-lists-wrapper component chart-table">
+    <ul>
+        {products_rows_html_assy}
+    </ul>
+    <div class="sellall">
+        {collapse_expand_text_link}
+    </div>
+</div>
+<script type="text/javascript">
+u.execWhenReadyPoller(function(){
+    var $accButtons = jQuery('.chart-table').find('li.chart_row .col-5');
+
+    $accButtons.each( function( ittr ){
+        jQuery(this).attr('data-rownum', ittr + 1 );
+        jQuery(this).closest('li').attr('data-rownum', ittr + 1 );
+    });
+
+    jQuery('.col-5').click(function() {
+        var $button     = jQuery(this);
+        var $parent     = $button.closest('li');
+        var $content    = $parent.find('.col-6 .inner-cell');
+        var $buttonLbl  = $button.find(".label-text");
+        var curStatus   = $parent.height() > 200;
+        var pName       = $parent.data('product-name');
+        var columnNum   = $button.data('rownum');
+
+        $button.toggleClass('show-button');
+        $buttonLbl.toggleClass('up');
+        $parent.toggleClass('acc-open');
+
+        $parent.animate({ height: ( curStatus ? 160 : 450 ) }, 200);
+        if( curStatus ) {
+            $content.hide().css({'top':'-30px','opacity': 0})
+            $buttonLbl.text('More Info')
+            u.trackEvent(['_trackEvent', 'Accordion', 'Close', pName, columnNum ]);
+        } else {
+            $content.show().animate({'top': '+=30px', "opacity":1 }, 500);
+            $buttonLbl.text('Close')
+            u.trackEvent(['_trackEvent', 'Accordion', 'Open', pName, columnNum ]);
+        }
+    });
+
+
+
+    function addEvent( elm , event, addName ){
+        var addName    = false || addName,
+            $button    = elm,
+            $parent    = $button.closest('li'),
+            pName      = $parent.data('product-name'),
+            columnNum  = $parent.data('rownum'),
+            eventName  = addName ? event + " " + pName : event;
+
+        u.trackEvent(['_trackEvent', 'Accordion', eventName, pName, columnNum]);
+    }
+
+    jQuery(document).on('click','.acc-open .col-0 a', function( event ){
+        addEvent( jQuery(this), 'Click on Logo' );
+        event.stopPropagation();
+    }).on('click','.acc-open .col-2 a', function( event ){
+        addEvent( jQuery(this), 'Click on CTA', true);
+        event.stopPropagation();
+    }).on('click','.acc-open .col-4 .link-type-review', function( event ){
+        addEvent( jQuery(this), 'Click on read review');
+        event.stopPropagation();
+    }).on('click','.acc-open .col-4 .link-type-link', function( event ){
+        addEvent( jQuery(this), 'Click on visit_link');
+        event.stopPropagation();
+    });
+
+    var _gameName = '';
+    var _partnerName = '';
+
+    jQuery('.img').on('click', function(){
+        var el = jQuery(this);
+        var gameName = el.data('title');
+        var partnerName = el.closest('li').data('product-name');
+        u.trackEvent(['_trackEvent', 'Accordion', 'click', partnerName, gameName ]);
+    });
+
+    jQuery('.img').hover( function(){
+        var el = jQuery(this);
+        _gameName = el.data('title');
+        _partnerName = el.closest('li').data('product-name');
+    });
+
+    jQuery('.tooltip-contayner, .tooltip-contayner a').on('click',function(){
+       u.trackEvent(['_trackEvent', 'Accordion', 'click', _partnerName, _gameName ]);
+    });
+
+    jQuery('li.chart_row').mouseenter(function () {
+        var el = jQuery(this);
+        setTimeout(function(){
+            var ifHover = jQuery(':hover').filter(el).length !==0;
+            if( ifHover ) {
+                addEvent( el, 'More info visible' );
+            }
+        },1000 );
+    });
+    var clickable_row_on = {clickable_row};
+    function reZebra_{component_id}(){
+        try{
+            jQuery('.partner_wrapper, .promotion-row', jQuery('#component-{component_id}')).removeClass('odd').removeClass('even').promise().done( function(){
+                var currentState = 'even';
+                jQuery('.partner_wrapper', jQuery('#component-{component_id}')).each(function(){
+                    if (jQuery(this).css('display') == 'block'){
+                        if (currentState == 'even'){
+                            currentState = 'odd';
+                        } else {
+                            currentState = 'even';
+                        }
+                        jQuery(this).addClass(currentState);
+                    }
+                });
+            });
+        } catch(e){}
+    }
+
+
+    var clickable_row_on = {clickable_row};
+    if (clickable_row_on){
+        // If clickable row is active, add support for clicking on the entire row to point
+        // at the moment, to the redirect server with the default link.
+        jQuery('.partner_wrapper', jQuery('#component-{component_id}')).each(function(){
+            jQuery(this).css('cursor', 'pointer');
+            clickIsAllowed = function (target) {
+                var $target = jQuery(target);
+                if (!$target.hasClass('j-rankit-related') &&
+                        $target.parents('.user-ratings-wrapper').length == 0 && !$target.hasClass('link-type-review') && $target.parents('.link-type-review').length == 0 && !$target.attr('ni-stop-propogation') && $target.parents('[ni-stop-propogation="true"]').length == 0) {
+                    return true;
+                }
+                return false;
+            };
+            jQuery(this).click(function (evt) {
+                evt = evt || event;
+                if (clickIsAllowed(evt.target)) {
+                    window.open(jQuery(this).attr('href'), '_blank');
+                }
+            });
+        });
+    }
+    else{
+        jQuery('.partner_wrapper', jQuery('#component-{component_id}')).each(function() {
+            jQuery(this).css('cursor', 'default');
+        });
+    }
+    jQuery('.advertiser_disclosure_link, .advertiser_disclosure_box' ).on('click', function(event){
+         event.stopPropagation();
+    })
+    jQuery(window).click(function( event ) {
+        jQuery('.advertiser_disclosure_box').hide();
+    });
+
+},  u.poller('jquery'));
+</script>
+{customer_rating_common_js}
+///////////////////////////////////////////
+ChartComponentTabs
+
+<div data-tab="{title}" class="tab {selected}" id="tab-{id}" style="width:{width}">
+    <span>{title}</span>
+</div>
+//////////////////////////////////////////
+ChartComponentFiltersLabel
+
+<span class="filter-label">{label}</span>
+//////////////////////////////////////////
+ChartComponentCell
+
+<div class="{type_css_class}">
+
+    <div class="inner-cell">
+        <div class="inner-cell-content">{content}</div>
+    </div>
+    {ribbon_handling}
+</div>
+///////////////////////////////////////
+ChartComponentFiltersWrapper
+
+<div class="filters-select">
+    {filters_label}
+    {filters}
+    <div class="clear-filters">Clear</div>
+</div>
+<script>
+  u.execWhenReadyPoller(function(){
+      $('.clear-filters').click(function(){
+          // Clear btn logic
+          var filters = $('.dropdownFilter');
+          // Set noTrack to all filters
+          jQuery.each(filters, function(i, filter) {
+            jQuery.data(filter, 'noTrack', true);
+          });
+
+          jQuery.data($('.dropdownFilter:last')[0], 'noTrack', false);
+          filters.prop('selectedIndex', 0).trigger('change');
+      });
+  },  u.poller('jquery'));
+</script>
+///////////////////////////////////////////
+ChartComponentHowWeScore
+
+<div class="how_we_score">
+    <div><a class="how_we_score_link" onclick="$('.how_we_score_box').show();$('.advertiser_disclosure_box').hide();">{title}</a>
+        <div class="how_we_score_box" style="display: none;">
+            <span class="how_we_score_box_title">{title}</span>
+            <div class="how_we_score_separator"></div>
+            {text}
+            <a onclick="$('.how_we_score_box').hide();">{close_text}</a></div>
+    </div>
+</div>
+///////////////////////////////////////
+ChartComponentDisclosure
+
+<div class="disclosure">
+    <div><a class="advertiser_disclosure_link" >{title}</a>
+        <div class="advertiser_disclosure_box" style="display: none;">
+            <span class="advertiser_disclosure_box_title">{title}</span>
+            <div class="disclosure_separator"></div>
+            {text}
+            <a class="float-right-close-button" >Close</a></div>
+    </div>
+</div>
+<script>
+u.execWhenReadyPoller(function(){
+    jQuery('.advertiser_disclosure_link').on('click', function( ){
+        jQuery('.advertiser_disclosure_box').show();
+    });
+    jQuery('.float-right-close-button').on('click', function( ){
+        jQuery('.advertiser_disclosure_box').hide();
+    });
+},u.poller('jquery'));
+</script>
+//////////////////////////////////////////
+ChartComponentHeaderCell
+
+<th>{tooltip}{text}</th>

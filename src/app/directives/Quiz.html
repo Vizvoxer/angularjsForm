@@ -1,0 +1,26 @@
+<label for="quiz" class="col-sm-3 control-label">Do you have hosting?</label>
+<div class="col-sm-9">
+    <div class="input-group" id="quiz">
+        <div class="input-group">
+            <label>
+                <input type="radio"
+                       name="hosting"
+                       value="yes"
+                       checked id="positive"
+                       ng-model="user.hosting"
+                       ng-value="true" > Yes
+            </label>
+        </div>
+        <div class="input-group">
+            <label>
+                <input type="radio"
+                       name="hosting"
+                       value="no"
+                       id="negative"
+                       ng-model="user.hosting"
+                       ng-value="false"> No
+            </label>
+        </div>
+
+    </div>
+</div>
