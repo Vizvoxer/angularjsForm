@@ -75,7 +75,7 @@ import angular from 'angular';
             template: require('./Submit.html'),
         }
     });
-    app.directive('user-table', function(){
+    app.directive('userTable', function(){
         return{
             restrict: 'E',
             template: require('./Table.html'),
